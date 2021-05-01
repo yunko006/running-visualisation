@@ -70,3 +70,16 @@ def accumulate_km(semaine, km):
         acc_list.append(accumule)
 
     return acc_list
+
+
+def duration_per_km(duration):
+    """
+    convertit le temps décimal en temps normal
+    return a float
+    """
+    x = str(duration).split(".")
+    dec = str(int(x[1]) * 60)
+    # remplace la valeur de x[1]
+    x[1] = dec[:2]
+    # join les deux valeurs pour former le nouveau chiffre
+    return float(".".join(x))

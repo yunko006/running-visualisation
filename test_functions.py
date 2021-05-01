@@ -1,5 +1,5 @@
 import unittest
-from utils import duration_en_min, convert_time, date_to_week, accumulate_km
+from utils import *
 
 
 class TestCase(unittest.TestCase):
@@ -21,6 +21,10 @@ class TestCase(unittest.TestCase):
 
     # def test_accumulate_km(self):
     #     acc = accumulate_km()
+
+    def test_duration_per_km(self):
+        duree_per_km = duration_per_km(466719 / 60000)
+        self.assertEqual(duree_per_km, 7.46)
 
 
 if __name__ == '__main__':
