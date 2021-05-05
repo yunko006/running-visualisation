@@ -50,25 +50,33 @@ def date_to_week(converted_time):
     return week
 
 
-def accumulate_km(semaine, km):
+def link_km_and_semaine(semaine, km):
     """
-    TODO
+    take two list and merge them with zip to iterate over and create a dictionnary
+    take two list
+    return a dict
     """
-    # variables
+    zip_list = zip(semaine, km)
+    link = defaultdict(list)
+
+    for k, v in zip_list:
+        link[k].append(v)
+
+    return link
+
+
+def accumulatedKm(defaultdict):
+    """
+    sum all the km in the database
+    take a dictionnary
+    return a list
+    """
     accumule = 0
     acc_list = []
-    # zip les deux list :
-    zip_list = zip(semaine, km)
-
-    d = defaultdict(list)
-    for k, v in zip_list:
-        d[k].append(v)
-
-    for key in d:
-        for i in d[key]:
+    for key in defaultdict:
+        for i in defaultdict[key]:
             accumule += i
         acc_list.append(accumule)
-
     return acc_list
 
 

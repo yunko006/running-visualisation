@@ -27,8 +27,10 @@ def main():
                 semaine.append(weeks)
                 read_file.close()
 
-    acc = accumulate_km(semaine, km)
-    return km, semaine, date, duree, acc
+    accumulated = link_km_and_semaine(semaine, km)
+    km_accumuler = accumulatedKm(accumulated)
+    # print(km_accumuler)
+    return km, semaine, date, duree, accumulated, km_accumuler
 
 
 if __name__ == '__main__':

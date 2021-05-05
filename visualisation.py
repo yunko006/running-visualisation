@@ -42,13 +42,15 @@ def course_par_distance(km):
                  filename='nb_de_fois_par_distance.html')
 
 
-def km_accumuler(semaine, acc_list):
+def graph_km_accumuler(semaine, km_accumuler):
     """
     graph qui montre les kms accumulés depuis le début
     TODO : penser ou années
     """
+
     x_values = sorted(list(set(semaine)))  # les semaines
-    y_values = acc_list  # associer les valeurs de km en fonction de leurs semaines
+    # associer les valeurs de km en fonction de leurs semaines
+    y_values = km_accumuler
 
     data = [Bar(x=x_values, y=y_values)]
 
@@ -62,7 +64,7 @@ def km_accumuler(semaine, acc_list):
 
 
 if __name__ == '__main__':
-    km, semaine, date, duree, acc_list = main()
+    km, semaine, date, duree, accumulated, km_accumuler = main()
     graph_distance(km)
     course_par_distance(km)
-    km_accumuler(semaine, acc_list)
+    graph_km_accumuler(semaine, km_accumuler)
