@@ -50,13 +50,13 @@ def date_to_week(converted_time):
     return week
 
 
-def link_km_and_semaine(semaine, km):
+def link_two_list(list1, list2):
     """
     take two list and merge them with zip to iterate over and create a dictionnary
     take two list
     return a dict
     """
-    zip_list = zip(semaine, km)
+    zip_list = zip(list1, list2)
     link = defaultdict(list)
 
     for k, v in zip_list:

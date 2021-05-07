@@ -20,7 +20,7 @@ def graph_distance(km):
     offline.plot({'data': data, 'layout': my_layout}, filename='distance.html')
 
 
-def course_par_distance(km):
+def graph_course_par_distance(km):
     """
     Graph qui montre : le nombre de fois que j'ai couru une certaines distances
     """
@@ -84,6 +84,6 @@ def grah_km_by_week(semaine, link_km_weeks):
 if __name__ == '__main__':
     km, semaine, date, duree, link_km_weeks, km_accumuler = main()
     graph_distance(km)
-    course_par_distance(km)
+    graph_course_par_distance(km)
     graph_km_accumuler(semaine, km_accumuler)
     grah_km_by_week(semaine, link_km_weeks)

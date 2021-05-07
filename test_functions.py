@@ -26,6 +26,10 @@ class TestCase(unittest.TestCase):
         duree_per_km = duration_per_km(466719 / 60000)
         self.assertEqual(duree_per_km, 7.46)
 
+    def test_link_two_list(self):
+        link = link_two_list([0, 1, 2], [3, 4, 5])
+        self.assertEqual(link, {0: [3], 1: [4], 2: [5]})
+
 
 if __name__ == '__main__':
     unittest.main()
