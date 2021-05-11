@@ -63,11 +63,11 @@ def graph_km_accumuler(semaine, km_accumuler):
                  filename='km_accumule.html')
 
 
-def grah_km_by_week(semaine, link_km_weeks):
+def grah_km_by_week(link_km_weeks, link_weeks_day):
     semaine_demander = str(input("Semaine: "))
 
     # jour de la semaine (un peu caca pour le moment)
-    x_values = list(range(1, len(link_km_weeks[semaine_demander]) + 1))
+    x_values = link_weeks_day[semaine_demander]
     # montrer les kms en fonction de la semaine souhaité par l'urtilisateur
     y_values = link_km_weeks[semaine_demander]
 
@@ -78,12 +78,13 @@ def grah_km_by_week(semaine, link_km_weeks):
 
     my_layout = Layout(
         title=f"Kms parcouru lors de la semaine {semaine_demander}", xaxis=x_axis_config, yaxis=y_axis_config)
-    offline.plot({'data': data, 'layout': my_layout}, filename='test4.html')
+    offline.plot({'data': data, 'layout': my_layout},
+                 filename='km_par_semaine.html')
 
 
 if __name__ == '__main__':
-    km, semaine, date, duree, link_km_weeks, km_accumuler = main()
+    km, semaine, date, duree, link_km_weeks, link_weeks_day, km_accumuler = main()
     graph_distance(km)
     graph_course_par_distance(km)
     graph_km_accumuler(semaine, km_accumuler)
-    grah_km_by_week(semaine, link_km_weeks)
+    grah_km_by_week(link_km_weeks, link_weeks_day)
